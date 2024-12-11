@@ -60,8 +60,9 @@ public class agua {
             } else {
                 total = pagar_consumo / 2;
             }
-        }
+        }else{
         total = pagar_consumo;
+        }
         System.out.println("TIENE DISCAPACIDAD (si) o (no)");
         String discapacidad = ag.next();
         if (discapacidad.equalsIgnoreCase("si")) {
@@ -69,6 +70,8 @@ public class agua {
             porcentaje = ag.nextDouble();
             total = pagar_consumo * porcentaje / 100;
             total = pagar_consumo - total;
+        }else{
+            total=pagar_consumo;
         }
         alcantarillado = total * 35 / 100;
         total = total + alcantarillado + 0.75 + 0.50;
