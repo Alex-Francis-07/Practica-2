@@ -11,12 +11,12 @@ public class agua {
         double total = 0.0;
         double porcentaje = 0.0;
         double alcantarillado = 0.0;
-        //int discapacidad;
+        // int discapacidad;
         // terceraedad;
         System.out.println("INGRESE EL CONSUMO DE AGUA");
-        String con =ag.nextLine();
-        float consumo = utilidades.transformStringFloat(con);
-        if (consumo<=0){
+        String con = ag.nextLine();
+        float consumo = utilidades.transformStringInt(con);
+        if (consumo <= 0) {
             System.out.println("INGRESE NUMEROS POSITIVOS Y MAYORES DE 0");
             return;
         }
@@ -61,6 +61,7 @@ public class agua {
                 total = pagar_consumo / 2;
             }
         }
+        total = pagar_consumo;
         System.out.println("TIENE DISCAPACIDAD (si) o (no)");
         String discapacidad = ag.next();
         if (discapacidad.equalsIgnoreCase("si")) {

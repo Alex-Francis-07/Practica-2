@@ -2,20 +2,23 @@ package controller.ejercicios;
 
 import java.util.Scanner;
 
+import controller.util.utilidades;
+
 public class telefonia {
     public void telefono() {
         Scanner sc = new Scanner(System.in);
         System.out.println("CLAVE DE LAS ZONAS");
-        int clave;
-        double minutos;
         for (zonas e : zonas.values()) {
             System.out.println(e.toString() + "   CLAVE (" + e.getClave()+")");
         }
         Double precio;
         System.out.println("INGRESE LA CLAVE DE LA ZONA QUE DESEA LLAMAR");
-        clave = sc.nextInt();
+        String cla = sc.nextLine();
+        int clave = utilidades.transformStringInt(cla);
+
         System.out.println("INGRESE LOS MINUTOS QUE DESEA HABLAR");
-        minutos = sc.nextDouble();
+        String min =sc.nextLine();
+        float minutos = utilidades.transformStringFloat(min);
         switch (clave) {
             case 12:
                 precio = (zonas.AMERICA_DEL_NORTE.getPrecio() * minutos);

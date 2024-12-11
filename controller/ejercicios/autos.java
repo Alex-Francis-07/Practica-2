@@ -8,7 +8,6 @@ public class autos {
     public void carros() {
         Scanner sc = new Scanner(System.in);
         float c = 0.0f;
-        float a;
         int d = 0;
         double total = 0.0;
         double b;
@@ -17,7 +16,12 @@ public class autos {
             c++;
             System.out.println("INGRESE (1) SI DESEA TERMINAR");
             System.out.println("INGRESE EL PRECIO DEL AUTO VENDIDO");
-            a = sc.nextFloat();
+            String e = sc.nextLine();
+            float a = utilidades.transformStringFloat(e);
+            if (a<0){
+                System.out.println("INGRES NUMEROS POSITIVOS Y MAYORES A 0");
+                break;
+            }
             if (a >= 10000) {
                 sueldo += 250;
                 d++;
