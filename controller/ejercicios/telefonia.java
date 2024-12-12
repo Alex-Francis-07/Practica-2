@@ -58,5 +58,6 @@ public class telefonia {
             default:
                 break;
         }
+    sc.close();
     }
 }

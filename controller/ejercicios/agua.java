@@ -83,5 +83,6 @@ public class agua {
         System.out.println("TASA POR RECOLECCIÓN DE BASURA: 0.75 $");
         System.out.println("COSTO DE PROCESAMIENTO DE DATOS: 0.50 $");
         System.out.println("EL TOTAL A PAGAR ES DE: " + utilidades.redondear((float) total) + " $");
+    ag.close();
     }
 }

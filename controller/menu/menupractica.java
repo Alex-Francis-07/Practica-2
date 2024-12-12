@@ -27,7 +27,7 @@ public class menupractica {
             System.out.println("0: SALIR");
             String opcion = menu.nextLine();
             opci = utilidades.transformStringInt(opcion);
-            if (opci !=1 && opci !=2 && opci !=3 && opci !=4){
+            if (opci != 1 && opci != 2 && opci != 3 && opci != 4) {
                 System.out.println("INGRESE LOS NUMEROS INDICADOS EN EL MENU");
             }
             switch (opci) {
@@ -60,5 +60,6 @@ public class menupractica {
         }
 
         while (opci != 0);
+        menu.close();
     }
 }
