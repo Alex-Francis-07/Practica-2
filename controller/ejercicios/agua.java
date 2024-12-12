@@ -9,10 +9,8 @@ public class agua {
         Scanner ag = new Scanner(System.in);
         double pagar_consumo = 0.0;
         double total = 0.0;
-        double porcentaje = 0.0;
+        float porcentaje = 0.0f;
         double alcantarillado = 0.0;
-        // int discapacidad;
-        // terceraedad;
         System.out.println("INGRESE EL CONSUMO DE AGUA");
         String con = ag.nextLine();
         float consumo = utilidades.transformStringInt(con);
@@ -28,7 +26,7 @@ public class agua {
                 pagar_consumo = 4;
             } else {
                 pagar_consumo = (consumo - 15) * 0.10;
-                pagar_consumo += 4;
+                pagar_consumo += 3;
             }
         } else if (consumo > 25 && consumo <= 40) {
             pagar_consumo = 40 - consumo;
@@ -51,26 +49,32 @@ public class agua {
             pagar_consumo = pagar_consumo * 0.35;
             pagar_consumo = pagar_consumo + 13;
         }
-        System.out.println("PERTENECE A LA TERCERA EDAD (si) o (no)");
-        String terceraedad = ag.next();
-        if (terceraedad.equalsIgnoreCase("si")) {
+        System.out.println("1:PERTENECE A LA TERCERA EDAD");
+        System.out.println("0:NO PERTENECE A LA TERCERA EDAD");
+        String ter = ag.next();
+        int terceraedad = utilidades.transformStringInt(ter);
+        System.out.println("1:TIENE DISCAPACIDAD");
+        System.out.println("0:NO TIENE DISCAPACIDAD");
+        String dis = ag.next();
+        int discapacidad = utilidades.transformStringInt(dis);
+        if (terceraedad==1 && discapacidad==1){
+            System.out.println("PORCENTAJE DE DISCAPACIDAD");
+            total=pagar_consumo/2;
+
+        }else if (terceraedad==1) {
             if (pagar_consumo > 45) {
                 total = pagar_consumo * 30 / 100;
                 total = pagar_consumo - total;
             } else {
                 total = pagar_consumo / 2;
             }
-        }else{
-        total = pagar_consumo;
-        }
-        System.out.println("TIENE DISCAPACIDAD (si) o (no)");
-        String discapacidad = ag.next();
-        if (discapacidad.equalsIgnoreCase("si")) {
+        }else if (discapacidad ==1 ) {
             System.out.println("PORCENTAJE DE DISCAPACIDAD");
-            porcentaje = ag.nextDouble();
+            porcentaje = ag.nextInt();
             total = pagar_consumo * porcentaje / 100;
             total = pagar_consumo - total;
-        }else{
+        }
+        if (discapacidad==0 && terceraedad==0){
             total=pagar_consumo;
         }
         alcantarillado = total * 35 / 100;
