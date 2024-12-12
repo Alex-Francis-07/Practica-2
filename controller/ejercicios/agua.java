@@ -63,7 +63,6 @@ public class agua {
         String dis = ag.next();
         int discapacidad = utilidades.transformStringInt(dis);
         if (terceraedad == 1 && discapacidad == 1) {
-            System.out.println("PORCENTAJE DE DISCAPACIDAD");
             total = pagar_consumo / 2;
 
         } else if (terceraedad == 1) {
