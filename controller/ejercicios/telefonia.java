@@ -9,18 +9,23 @@ public class telefonia {
         Scanner sc = new Scanner(System.in);
         System.out.println("CLAVE DE LAS ZONAS");
         for (zonas e : zonas.values()) {
-            System.out.println(e.toString() + "   CLAVE (" + e.getClave()+")");
+            System.out.println(e.toString() + "   CLAVE (" + e.getClave() + ")");
         }
         Double precio;
-        System.out.println("INGRESE LA CLAVE DE LA ZONA QUE DESEA LLAMAR");
-        String cla = sc.nextLine();
-        int clave = utilidades.transformStringInt(cla);
-        if (clave !=12 && clave !=15 && clave !=18 && clave !=19 && clave !=23 && clave !=25 && clave !=29 && clave !=30){
-            System.out.println("INGRESE UNA CLAVE CARRECTA");
-            return;
+        int clave;
+        while (true) {
+            System.out.println("INGRESE LA CLAVE DE LA ZONA QUE DESEA LLAMAR");
+            String cla = sc.nextLine();
+            clave = utilidades.transformStringInt(cla);
+            if (clave == 12 || clave == 15 || clave == 18 || clave == 19 || clave == 23 || clave == 25 || clave == 29
+                    || clave == 30) {
+                break;
+            } else {
+                System.out.println("INGRESE UNA CLAVE CORRECTA");
+            }
         }
         System.out.println("INGRESE LOS MINUTOS QUE DESEA HABLAR");
-        String min =sc.nextLine();
+        String min = sc.nextLine();
         float minutos = utilidades.transformStringFloat(min);
         switch (clave) {
             case 12:
@@ -57,7 +62,7 @@ public class telefonia {
                 break;
             default:
                 break;
+
         }
-    sc.close();
     }
 }

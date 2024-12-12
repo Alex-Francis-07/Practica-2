@@ -60,6 +60,5 @@ public class menupractica {
         }
 
         while (opci != 0);
-        menu.close();
     }
 }

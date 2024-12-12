@@ -15,6 +15,5 @@ public class bandera {
             }
             System.out.println("EL NUMERO ES: " + num);
         } while (!fin);
-    sc.close();
     }
 }

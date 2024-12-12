@@ -10,14 +10,19 @@ public class agua {
         double pagar_consumo = 0.0;
         double total = 0.0;
         float porcentaje = 0.0f;
+        float consumo =0.0f;
         double alcantarillado = 0.0;
-        System.out.println("INGRESE EL CONSUMO DE AGUA");
-        String con = ag.nextLine();
-        float consumo = utilidades.transformStringInt(con);
-        if (consumo <= 0) {
-            System.out.println("INGRESE NUMEROS POSITIVOS Y MAYORES DE 0");
-            return;
+        while (true) {
+            System.out.println("INGRESE EL CONSUMO DE AGUA");
+            String con = ag.nextLine();
+            consumo = utilidades.transformStringInt(con);
+            if(consumo > 0)
+            break;
+            else{
+                System.out.println("INGRESE NUMEROS POSITIVOS Y MAYORES A 0");
+            }
         }
+
         if (consumo > 0 && consumo <= 15) {
             pagar_consumo = 3;
         } else if (consumo > 15 && consumo <= 25) {
@@ -57,25 +62,25 @@ public class agua {
         System.out.println("0:NO TIENE DISCAPACIDAD");
         String dis = ag.next();
         int discapacidad = utilidades.transformStringInt(dis);
-        if (terceraedad==1 && discapacidad==1){
+        if (terceraedad == 1 && discapacidad == 1) {
             System.out.println("PORCENTAJE DE DISCAPACIDAD");
-            total=pagar_consumo/2;
+            total = pagar_consumo / 2;
 
-        }else if (terceraedad==1) {
+        } else if (terceraedad == 1) {
             if (pagar_consumo > 45) {
                 total = pagar_consumo * 30 / 100;
                 total = pagar_consumo - total;
             } else {
                 total = pagar_consumo / 2;
             }
-        }else if (discapacidad ==1 ) {
+        } else if (discapacidad == 1) {
             System.out.println("PORCENTAJE DE DISCAPACIDAD");
             porcentaje = ag.nextInt();
             total = pagar_consumo * porcentaje / 100;
             total = pagar_consumo - total;
         }
-        if (discapacidad==0 && terceraedad==0){
-            total=pagar_consumo;
+        if (discapacidad == 0 && terceraedad == 0) {
+            total = pagar_consumo;
         }
         alcantarillado = total * 35 / 100;
         total = total + alcantarillado + 0.75 + 0.50;
@@ -83,6 +88,5 @@ public class agua {
         System.out.println("TASA POR RECOLECCIÓN DE BASURA: 0.75 $");
         System.out.println("COSTO DE PROCESAMIENTO DE DATOS: 0.50 $");
         System.out.println("EL TOTAL A PAGAR ES DE: " + utilidades.redondear((float) total) + " $");
-    ag.close();
     }
 }

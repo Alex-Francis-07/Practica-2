@@ -41,6 +41,5 @@ public class serie {
         }
         System.out.println();
         System.out.println("EL RESULTADO ES: " + utilidades.redondearDouble(suma));
-    sc.close();
     }
 }

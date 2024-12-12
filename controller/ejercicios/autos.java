@@ -40,6 +40,5 @@ public class autos {
         System.out.println("AUTOS VENDIDOS " + c);
         System.out.println("PRECIO TOTAL DE LOS AUTOS VENDIDOS " + (total - 1));
         System.out.println("UTILIDAD DEL 5% ES DE " + utilidades.redondear((float) b));
-        sc.close();
     }
 }
