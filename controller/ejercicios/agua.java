@@ -67,7 +67,7 @@ public class agua {
             total = pagar_consumo / 2;
 
         } else if (terceraedad == 1) {
-            if (pagar_consumo > 45) {
+            if (pagar_consumo > 3) {
                 total = pagar_consumo * 30 / 100;
                 total = pagar_consumo - total;
             } else {

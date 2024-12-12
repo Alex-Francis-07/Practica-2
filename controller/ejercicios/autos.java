@@ -19,7 +19,7 @@ public class autos {
             String e = sc.nextLine();
             float a = utilidades.transformStringFloat(e);
             if (a < 0) {
-                System.out.println("INGRES NUMEROS POSITIVOS Y MAYORES A 0");
+                System.out.println("INGRESE NUMEROS POSITIVOS Y MAYORES A 0");
                 break;
             }
             if (a >= 10000) {
